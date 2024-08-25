@@ -62,7 +62,7 @@ export default function Home() {
         <div className="w-full "> 
           <div className="md:mt-5"><LaunchSoon /></div>
           
-          <div className="my-5 md:my-10 h-auto text-[#13072e] text-[40px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium {`${roboto.className} text-lg`} leading-[44px]">
+          <div className="my-5 md:my-10 h-auto text-[#13072e] text-[50px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium {`${roboto.className} `} leading-[54px]">
             Accelerate Your Mechanical Engineering <br></br>
             <span className="font-medium {`${roboto.className} `} gradient-text"> Career to the Next Level</span>
           </div>
