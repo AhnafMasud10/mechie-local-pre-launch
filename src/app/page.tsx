@@ -63,8 +63,8 @@ export default function Home() {
           <div className="md:mt-5"><LaunchSoon /></div>
           
           <div className="my-5 md:my-10 h-auto text-[#13072e] text-[50px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium {`${roboto.className} text-lg`} leading-[54px]">
-            Accelerate Your Mechanical Engineering
-            <span className="font-medium font-['Inter'] gradient-text"> Career to the Next Level</span>
+            Accelerate Your Mechanical Engineering <br></br>
+            <span className="font-medium {`${roboto.className} text-lg`} gradient-text"> Career to the Next Level</span>
           </div>
           <div className=" md:w-[460px] mr-12 sm:text-[20px] text-[15px] font-normal font-['Inter'] leading-relaxed my-5 md:my-10"> 
           Join our waitlist to access the platform on a priority basis as soon as we launch!
