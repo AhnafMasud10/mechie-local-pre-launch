@@ -10,7 +10,6 @@ import logoSmall from "./Image/logo-small.png"
 import TestimonialCarousel from "./components/Carousel";
 import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useRef, useState } from "react";
-import Script from "next/script";
 
 
 
@@ -56,22 +55,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <Script
-        id="google-analytics"
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-YENXPFZBH0"
-      />
-      <Script
-        id="google-analytics-setup"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-YENXPFZBH0');
-          `,
-        }}
-      />
+      
       
       <div className="md:ml-20 ml-4 sm:ml-4 my-2 ">
         <div className="flex "> 
