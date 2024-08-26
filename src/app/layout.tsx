@@ -38,6 +38,8 @@ export default function RootLayout({
         {/* Link to the image as a favicon */}
         <link rel="icon" href="/favicon.png" type="image/png" />
         <title>Mechie</title>
+        
+        
       </head>
       <body className={`${inter.className} ${roboto.className}`}>
         <Header />
