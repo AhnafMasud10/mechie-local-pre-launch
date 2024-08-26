@@ -9,7 +9,7 @@ import { Roboto } from "next/font/google";
 import Script from "next/script";
 
 
-const GA_ID = process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID;
+
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -43,22 +43,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" />
         <title>Mechie</title>
         
-        <Script
-        id="google-analytics"
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-      />
-      <Script
-        id="google-analytics-setup"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
-          `,
-        }}
-      />
+        
       </head>
       <body className={`${inter.className} ${roboto.className}`}>
         <Header />
