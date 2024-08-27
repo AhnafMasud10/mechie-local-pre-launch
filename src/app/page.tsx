@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[15%] max-w-[30%]">
+          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[15%] max-w-[30%] items-center justify-end">
             <div className="hidden md:block">
               <Image
                 src={logoLarge}
@@ -82,8 +82,8 @@ export default function Home() {
               <Image
                 src={logoSmall}
                 alt="logo"
-                width={100}
-                height={100}
+                width={200}
+                height={200}
                 className="justify-end"
               />
             </div>
