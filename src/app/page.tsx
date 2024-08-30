@@ -54,12 +54,12 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="md:ml-20  sm:ml-4 my-2 ">
+      <div className="lg:ml-20 sm:ml-8 my-2 ">
         <div className="flex ">
           <div className="w-full ">
-            <div className="md:mt-5 mx-4"><LaunchSoon /></div>
+            <div className="md:mt-5 ml-4"><LaunchSoon /></div>
 
-            <div className="ml-4 md:ml-0 my-5 md:my-10 h-auto text-[#13072e] text-[36px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium leading-[40px]">
+            <div className="ml-4  sm:ml-0 my-5 h-auto text-[#13072e] text-[36px] leading-[40px] sm:text-[40px] sm:leading-[44px] lg:text-[85px] lg:leading-[89px] font-medium ">
               Accelerate Your Mechanical Engineering <br/>
               <span className="font-medium gradient-text "> Career to the Next Level</span>
             </div>
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[15%] max-w-[30%] items-start md:items-center justify-end">
+          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[25%] max-w-[25%] items-start md:items-center justify-end">
             <div className="hidden md:block">
               <Image
                 src={logoLarge}
@@ -82,8 +82,8 @@ export default function Home() {
               <Image
                 src={logoSmall}
                 alt="logo"
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 className="justify-end"
               />
             </div>
