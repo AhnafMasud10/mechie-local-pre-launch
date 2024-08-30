@@ -69,12 +69,14 @@ const TestimonialCarousel = () => {
         }}
       >
         {testimonials.map((testimonial, index) => (
-          
+          // mb-6 pt-5
           <SwiperSlide key={index}>
-            <div className="bg-white  p-6 rounded-lg shadow-md text-gray-700 md:h-72 mb-20 h-80">
-              <p className="mb-6 px-5">{testimonial.text}</p>
-              <p className="text-right text-purple-600 font-semibold px-4">{testimonial.name}</p>
+            <div className="bg-white  p-6 rounded-lg shadow-md text-gray-700 md:h-64 mb-20 sm:h-80 h-60 flex flex-col justify-between">
+              <p className="px-4  ">{testimonial.text}</p>
+              <div className='namepos  '>
+              <p className="text-right  text-purple-600 font-semibold px-4">{testimonial.name}</p>
               <p className="text-right text-sm text-gray-500">{testimonial.position}</p>
+              </div>
             </div>
           </SwiperSlide>
           
