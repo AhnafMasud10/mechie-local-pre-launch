@@ -90,7 +90,7 @@ export default function Home() {
           </div>
           
         </div>
-        <div className="mx-4 md:w-[460px]  sm:text-[20px] text-[20px]  font-normal leading-relaxed my-5 md:my-10 md:hidden block">
+        <div className="mx-4 md:w-[460px]  sm:text-[20px] text-[20px]  font-normal leading-relaxed pb-3 md:my-10 md:hidden block">
               Join our waitlist to access the platform on a priority basis as soon as we launch!
             </div>
         <div className="flex justify-center lg:justify-start sm:flex mb-12">
