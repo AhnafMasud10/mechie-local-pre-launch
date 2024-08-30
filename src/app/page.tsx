@@ -54,21 +54,21 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="md:ml-20 ml-4 sm:ml-4 my-2 ">
+      <div className="md:ml-20  sm:ml-4 my-2 ">
         <div className="flex ">
           <div className="w-full ">
-            <div className="md:mt-5"><LaunchSoon /></div>
+            <div className="md:mt-5 mx-4"><LaunchSoon /></div>
 
-            <div className="my-5 md:my-10 h-auto text-[#13072e] text-[36px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium leading-[39px]">
-              Accelerate Your Mechanical Engineering <br />
-              <span className="font-medium gradient-text"> Career to the Next Level</span>
+            <div className="ml-4 md:ml-0 my-5 md:my-10 h-auto text-[#13072e] text-[36px] sm:text-[60px] sm:leading-[64px] md:text-[85px] md:leading-[89px] font-medium leading-[40px]">
+              Accelerate Your Mechanical Engineering <br/>
+              <span className="font-medium gradient-text "> Career to the Next Level</span>
             </div>
-            <div className="md:w-[460px] mr-12 sm:text-[20px] text-[18px] font-normal leading-relaxed my-5 md:my-10">
+            <div className="md:w-[460px] mr-12 sm:text-[20px] text-[18px] font-normal leading-relaxed my-5 md:my-10 hidden md:block">
               Join our waitlist to access the platform on a priority basis as soon as we launch!
             </div>
           </div>
 
-          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[15%] max-w-[30%] items-center justify-end">
+          <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[15%] max-w-[30%] items-start md:items-center justify-end">
             <div className="hidden md:block">
               <Image
                 src={logoLarge}
@@ -82,13 +82,17 @@ export default function Home() {
               <Image
                 src={logoSmall}
                 alt="logo"
-                width={150}
-                height={150}
+                width={100}
+                height={100}
                 className="justify-end"
               />
             </div>
           </div>
+          
         </div>
+        <div className="mx-4 md:w-[460px]  sm:text-[20px] text-[20px]  font-normal leading-relaxed my-5 md:my-10 md:hidden block">
+              Join our waitlist to access the platform on a priority basis as soon as we launch!
+            </div>
         <div className="flex justify-center lg:justify-start sm:flex mb-12">
           <div className="my-1 justify-center md:w-[540px] sm:w-[450px] w-[400px] h-14 sm:pl-4 pl-2 pr-2 py-1 rounded-3xl border border-[#3e1993]/10 flex items-center">
             <div className="flex-grow flex items-center gap-4">
@@ -111,10 +115,13 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="container mx-auto px-4">
+        {/* <div className="container mx-auto px-4">
+          <TestimonialCarousel />
+        </div> */}
+      </div>
+      <div className="container mx-auto ">
           <TestimonialCarousel />
         </div>
-      </div>
     </div>
   );
 }
