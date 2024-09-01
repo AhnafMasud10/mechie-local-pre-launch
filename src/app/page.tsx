@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { addDoc, collection } from "firebase/firestore";
 
-import { db, analytics } from "../firebaseConfig";
+import { db } from "../firebaseConfig";
 import { LaunchSoon } from "./components/launch-soon";
 import logoLarge from "./Image/vector-logo.png";
 import logoSmall from "./Image/logo-small.png";
@@ -11,6 +11,7 @@ import TestimonialCarousel from "./components/Carousel";
 import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useEffect, useState } from "react";
 import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebaseConfig";
 
 const TRACKING_ID = "G-386RZ7TX47";
 ReactGA.initialize(TRACKING_ID);
@@ -20,7 +21,9 @@ export default function Home() {
     ReactGA.pageview(window.location.pathname);
 
     // Track page view with Firebase Analytics
-    logEvent(analytics, "page_view", { page_path: window.location.pathname });
+    if (typeof window !== "undefined" && analytics) {
+      logEvent(analytics, "page_view", { page_path: window.location.pathname });
+    }
   }, []);
 
   const [email, setEmail] = useState<string>("");
@@ -47,11 +50,13 @@ export default function Home() {
       });
 
       // Track the successful email submission with Firebase Analytics
-      logEvent(analytics, "submit_email", {
-        category: "User",
-        action: "Submitted Email",
-        label: "Join Waitlist",
-      });
+      if (typeof window !== "undefined" && analytics) {
+        logEvent(analytics, "submit_email", {
+          category: "User",
+          action: "Submitted Email",
+          label: "Join Waitlist",
+        });
+      }
 
       // Clear the email input after successful submission
       setEmail("");
