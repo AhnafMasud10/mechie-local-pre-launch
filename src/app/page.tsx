@@ -3,10 +3,10 @@ import Image from "next/image";
 import { addDoc, collection } from "firebase/firestore";
 
 import { db } from "../firebaseConfig";
+import ReactGA from "react-ga";
 import { LaunchSoon } from "./components/launch-soon";
 import logoLarge from "./Image/vector-logo.png";
 import logoSmall from "./Image/logo-small.png";
-import ReactGA from "react-ga";
 import TestimonialCarousel from "./components/Carousel";
 import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useEffect, useState } from "react";
