@@ -2,22 +2,20 @@
 import Image from "next/image";
 import { addDoc, collection } from "firebase/firestore";
 
-import { db } from '../firebaseConfig';
+import { db, analytics } from '../firebaseConfig';
 import { LaunchSoon } from "./components/launch-soon";
 import logoLarge from "./Image/vector-logo.png";
 import logoSmall from "./Image/logo-small.png";
-import ReactGA from "react-ga";
 import TestimonialCarousel from "./components/Carousel";
 import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useEffect, useState } from "react";
 
 
-const TRACKING_ID = 'G-8Y2PCC9JRT';
-ReactGA.initialize(TRACKING_ID);
+
 
 export default function Home() {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    
   }, []);
 
   const [email, setEmail] = useState<string>("");
@@ -36,12 +34,8 @@ export default function Home() {
       await addDoc(collection(db, "messages"), { email });
 
       // Track the successful email submission
-      ReactGA.event({
-        category: 'User',
-        action: 'Submitted Email',
-        label: 'Join Waitlist',
-        value: 1, // Optional value, represents the number of emails submitted
-      });
+      
+      
 
       // Clear the email input after successful submission
       setEmail("");
