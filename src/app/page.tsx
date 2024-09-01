@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { addDoc, collection } from "firebase/firestore";
 
-import { db } from '../firebaseConfig';
+import { db, analytics } from "../firebaseConfig";
 import { LaunchSoon } from "./components/launch-soon";
 import logoLarge from "./Image/vector-logo.png";
 import logoSmall from "./Image/logo-small.png";
@@ -10,20 +10,23 @@ import ReactGA from "react-ga";
 import TestimonialCarousel from "./components/Carousel";
 import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useEffect, useState } from "react";
+import { logEvent } from "firebase/analytics";
 
-
-const TRACKING_ID = 'G-8Y2PCC9JRT';
+const TRACKING_ID = "G-386RZ7TX47";
 ReactGA.initialize(TRACKING_ID);
 
 export default function Home() {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
+
+    // Track page view with Firebase Analytics
+    logEvent(analytics, "page_view", { page_path: window.location.pathname });
   }, []);
 
   const [email, setEmail] = useState<string>("");
 
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();  // Prevent default form submission behavior
+    e.preventDefault(); // Prevent default form submission behavior
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
@@ -37,10 +40,17 @@ export default function Home() {
 
       // Track the successful email submission
       ReactGA.event({
-        category: 'User',
-        action: 'Submitted Email',
-        label: 'Join Waitlist',
+        category: "User",
+        action: "Submitted Email",
+        label: "Join Waitlist",
         value: 1, // Optional value, represents the number of emails submitted
+      });
+
+      // Track the successful email submission with Firebase Analytics
+      logEvent(analytics, "submit_email", {
+        category: "User",
+        action: "Submitted Email",
+        label: "Join Waitlist",
       });
 
       // Clear the email input after successful submission
@@ -57,14 +67,20 @@ export default function Home() {
       <div className="lg:ml-20 sm:ml-8 my-2 ">
         <div className="flex ">
           <div className="w-full ">
-            <div className="md:mt-5 ml-4"><LaunchSoon /></div>
+            <div className="md:mt-5 ml-4">
+              <LaunchSoon />
+            </div>
 
             <div className="ml-4  sm:ml-0 my-5 h-auto text-[#13072e] text-[36px] leading-[40px] sm:text-[40px] sm:leading-[44px] lg:text-[85px] lg:leading-[89px] font-medium ">
-              Accelerate Your Mechanical Engineering <br/>
-              <span className="font-medium gradient-text "> Career to the Next Level</span>
+              Accelerate Your Mechanical Engineering <br />
+              <span className="font-medium gradient-text ">
+                {" "}
+                Career to the Next Level
+              </span>
             </div>
             <div className="md:w-[460px] mr-12 sm:text-[20px] text-[18px] font-normal leading-relaxed my-5 md:my-10 hidden md:block">
-              Join our waitlist to access the platform on a priority basis as soon as we launch!
+              Join our waitlist to access the platform on a priority basis as
+              soon as we launch!
             </div>
           </div>
 
@@ -88,11 +104,11 @@ export default function Home() {
               />
             </div>
           </div>
-          
         </div>
         <div className="mx-4 md:w-[460px]  sm:text-[20px] text-[20px]  font-normal leading-relaxed pb-3 md:my-10 md:hidden block">
-              Join our waitlist to access the platform on a priority basis as soon as we launch!
-            </div>
+          Join our waitlist to access the platform on a priority basis as soon
+          as we launch!
+        </div>
         <div className="flex justify-center lg:justify-start sm:flex mb-12">
           <div className="my-1 justify-center md:w-[540px] sm:w-[450px] w-[400px] h-14 sm:pl-4 pl-2 pr-2 py-1 rounded-3xl border border-[#3e1993]/10 flex items-center">
             <div className="flex-grow flex items-center gap-4">
@@ -120,8 +136,8 @@ export default function Home() {
         </div> */}
       </div>
       <div className="container mx-auto ">
-          <TestimonialCarousel />
-        </div>
+        <TestimonialCarousel />
+      </div>
     </div>
   );
 }
