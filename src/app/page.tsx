@@ -76,7 +76,7 @@ export default function Home() {
               <LaunchSoon />
             </div>
 
-            <div className="ml-4  sm:ml-0 my-5 h-auto text-[#13072e] text-[36px] leading-[40px] sm:text-[40px] sm:leading-[44px] lg:text-[85px] lg:leading-[89px] font-medium ">
+            <div className="mx-5 sm:ml-0 my-5 h-auto text-[#13072e] text-[36px] leading-[40px] sm:text-[40px] sm:leading-[44px] lg:text-[85px] lg:leading-[89px] font-medium ">
               Accelerate Your Mechanical Engineering <br />
               <span className="font-medium gradient-text ">
                 {" "}
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
 
           <div className="flex sm:mt-[20px] w-full md:max-w-[28%] sm:max-w-[25%] max-w-[25%] items-start md:items-center justify-end">
-            <div className="hidden md:block">
+            <div className="hidden md:block ">
               <Image
                 src={logoLarge}
                 alt="logo"
