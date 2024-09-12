@@ -12,7 +12,6 @@ import MailIcon from "@heroicons/react/solid/MailIcon";
 import { useEffect, useState } from "react";
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../firebaseConfig";
-
 const TRACKING_ID = "G-386RZ7TX47";
 ReactGA.initialize(TRACKING_ID);
 
@@ -139,7 +138,16 @@ export default function Home() {
         {/* <div className="container mx-auto px-4">
           <TestimonialCarousel />
         </div> */}
+
+          
+        
       </div>
+      <div className="md:mx-auto w-full lg:w-[60%] my-16 ">
+          <video controls width="100%" autoPlay muted loop>
+            <source src="/videos/Promo.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       <div className="container mx-auto ">
         <TestimonialCarousel />
       </div>
