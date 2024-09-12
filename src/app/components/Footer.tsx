@@ -12,7 +12,7 @@ const Footer:FunctionComponent = () =>{
             <div className="flex items-center justify-center mb-5">
 
                 <div className="w-[120.5px] h-6  flex items-center">
-                    <div className="relative h-full w-full flex items-center justify-between">
+                    <div className="relative h-full w-full flex items-center justify-evenly">
                         <Image
                         className="h-full w-auto"
                         alt="company logo"
