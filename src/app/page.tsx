@@ -102,8 +102,8 @@ export default function Home() {
               <Image
                 src={logoSmall}
                 alt="logo"
-                width={150}
-                height={150}
+                width={100}
+                height={100}
                 className="justify-end"
               />
             </div>
